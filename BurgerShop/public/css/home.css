@@ -1,0 +1,191 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+header, footer {
+  background: #ff9800;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+main {
+  display: flex;
+  height: calc(100vh - 100px); /* full height minus header/footer */
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* pushes left and right sections apart */
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
+  color: white;
+}
+
+.nav-btn {
+  height: 30px;
+  width: 80px;
+  position: relative; /* needed so child absolute anchors position against it */
+  background-color: #ff9800;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-btn a {
+  display: block;     
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;   
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.nav-btn:hover, .nav-btn a:hover {
+  color: #222;
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+.nav-right button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-right button:hover {
+  background-color: darkred;
+}
+
+
+/* --- MAIN BAR --- */
+.main-bar {
+  flex-grow: 1;
+  flex-basis: 100%;
+  background: #fff3e0;
+  transition: flex-basis 0.4s ease; /* smooth shrink animation */
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+/* main-bar width adjustments */
+.main-bar.full-width {
+  flex-basis: 100%;
+}
+
+.main-bar.shrunk {
+  flex-basis: calc(100% - 300px); /* subtract sidebar width */
+}
+
+/* --- SIDEBAR --- */
+.side-bar {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: #f9f9f9;
+  border-left: 2px solid #ff9800;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.side-bar.visible {
+  width: 300px;
+  opacity: 1;
+  padding: 20px;
+}
+
+/* Cart styling */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.cart-item button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 3px 6px;
+  cursor: pointer;
+}
+
+.cart-total {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.cart-total button {
+  background: #ff9800;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cart-total button:hover {
+  background: #f57c00;
+}
+
+/* Burger cards */
+.main-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.card-component {
+  width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.card-component:hover {
+  transform: scale(1.05);
+}
+
+.cardImg img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.selectBtn {
+  margin-top: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+.selectBtn:hover {
+  background-color: #f57c00;
+}

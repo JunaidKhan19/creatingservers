@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/signup-login.css">
+</head>
+<body>
+    <div class="login-container">
+        <form id="loginform" onsubmit="login(event)">
+            <div class="inputDiv">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="inputDiv">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="inputDiv">
+                <button type="submit" id="submitbtn">Submit</button>
+            </div>
+            <p id="message"></p>
+        </form>
+        <p>Dont have an account?? <a href="/signup">Sign up</a></p>
+    </div>
+
+    <script src="/login.js"></script>
+</body>
+</html>

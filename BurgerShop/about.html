@@ -4,8 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    <h2>This is an about page.</h2>
+    <header>This is an about page.</header>
+
+    <div class="nav-container">
+        <nav class="navbar">
+            <div class="nav-left">
+                <button class="nav-btn"><a href="/home">Home</a></button>
+                <button class="nav-btn"><a href="/order">Orders</a></button>
+                <button class="nav-btn"><a href="/bill">Bills</a></button>
+                <button class="nav-btn"><a href="/about">About</a></button>
+            </div>
+            <div class="nav-right">
+                <button id="logoutBtn" onclick="logout()">Logout</button>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <h1>About This Project</h1>
+        <p>
+            <strong>Burger Shop</strong> is a full-stack web project built using 
+            <strong>Node.js</strong>, <strong>Express.js</strong>, <strong>db.json</strong>, 
+            and <strong>XOR Authentication</strong>.
+            It simulates an online burger ordering platform where users can browse products,
+            add them to the cart, and place orders, while admins can manage the products and view orders.
+        </p>
+
+        <h2>🎯 Key Features</h2>
+        <ul>
+            <li>🔐 Admin/User authentication (Signup, Login, Logout)</li>
+            <li>🔐 Admin/User is remembered by storing email on local storage</li>
+            <li>🧑‍💼 Admin can add product-related data (name, price, addons, etc.)</li>
+            <li>📊 Admin can view and manage orders from all users</li>
+            <li>📈 Admin dashboard includes graphical representation and analytics of sales</li>
+            <li>🛍️ Users can view, add, and remove products from the cart</li>
+            <li>📦 Users can place orders; admins can view them</li>
+            <li>🧾 Bills are generated for placed orders</li>
+            <li>🧠 Passwords are encrypted using simple XOR</li>
+            <li>🗂️ Simple db.json file is used for storing users, products, and orders</li>
+        </ul>
+
+        <h2>🛠️ Tech Stack</h2>
+        <ul>
+            <li>Backend: Node.js, Express.js</li>
+            <li>Database: db.json file</li>
+            <li>Authentication: XOR operator and equality check</li>
+            <li>Frontend: HTML, CSS, JavaScript</li>
+            <li>Image, JS & CSS files: stored in public folder</li>
+        </ul>
+
+        <h2>👨‍💻 About Me</h2>
+        <p>
+            Hi, I’m <strong>Khan Junaid</strong>, a passionate web developer focused on building
+            scalable and secure full-stack applications. I enjoy learning new technologies and 
+            turning ideas into working products.
+        </p>
+        <p>
+            This project was created to demonstrate my understanding of 
+            backend development, API design, and user authentication systems.
+            It is based on a very basic approach using node.js and express.js & 
+            db.json file was used as database.
+        </p>
+
+        <p>
+            <em>
+                Note: This is a learning project meant to demonstrate backend logic and routing using 
+                Node.js and Express. The XOR-based password encryption and file-based database 
+                (<code>db.json</code>) are intentionally simple for educational purposes.
+            </em>
+        </p>
+
+        <h3>📫 Connect with me</h3>
+        <div class="contactDiv">
+            <div>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=khanjunaid1719@gmail.com" target="_blank">
+                    <i class="fa-solid fa-envelope" style="font-size:24px; color:#d14836;"></i>
+                </a>
+            </div>
+
+            <div class="ctcDivider"></div>  
+            
+            <div>
+                <a href="https://github.com/JunaidKhan19" target="_blank">
+                    <i class="fa-brands fa-github" style="font-size:24px; color:black;"></i> 
+                </a>
+            </div>
+
+            <div class="ctcDivider"></div>  
+
+            <div>
+                <a href="https://www.linkedin.com/in/junaidkhan1719/" target="_blank">
+                    <i class="fa-brands fa-linkedin" style="font-size:24px; color:#0077b5;"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>Made by <b>Khan Junaid</b></p>
+    </footer>
 </body>
 </html>

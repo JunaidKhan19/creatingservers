@@ -1,0 +1,116 @@
+/* Make the whole page a flex column */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #fafafa;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+}
+
+header, footer {
+  background: #ff9800;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+}
+
+
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* pushes left and right sections apart */
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
+  color: white;
+}
+
+.nav-btn {
+  height: 30px;
+  width: 80px;
+  position: relative; /* needed so child absolute anchors position against it */
+  background-color: #ff9800;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-btn a {
+  display: block;     
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;   
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.nav-btn:hover, .nav-btn a:hover {
+  color: #222;
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+.nav-right button {
+  background-color: crimson;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-right button:hover {
+  background-color: darkred;
+}
+
+/* --- MAIN BAR --- */
+main {
+    flex: 1; /* this pushes footer to bottom if content is short */
+    display: flex;
+    flex-direction: column;
+}
+
+.orders-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+}
+
+.order-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 280px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.order-card h3 {
+    color: #ff9800;
+}
+
+.order-card ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.order-card li {
+    padding: 4px 0;
+    font-size: 14px;
+}
+
+.total {
+    margin-top: 8px;
+    font-weight: bold;
+    color: #333;
+}

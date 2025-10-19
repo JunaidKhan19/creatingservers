@@ -1,0 +1,118 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "email": "admin@example.com",
+      "password": "KNGCDj\u001b\u0018\u0019"
+    }
+  ],
+  "burgers": [
+    {
+      "id": 1,
+      "name": "Cheese Chicken Burger",
+      "desc": "Juicy chicken patty with cheese",
+      "price": 250,
+      "addons": [
+        {
+          "id": 1,
+          "name": "Extra Cheese",
+          "price": 50
+        },
+        {
+          "id": 2,
+          "name": "French Fries",
+          "price": 80
+        },
+        {
+          "id": 3,
+          "name": "Mexican Sauce",
+          "price": 20
+        },
+        {
+          "id": 4,
+          "name": "Italian Sauce",
+          "price": 25
+        }
+      ],
+      "image": "cheese_burger.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Veggie Burger",
+      "desc": "Healthy veggie patty with fresh salad",
+      "price": 200,
+      "addons": [
+        {
+          "id": 1,
+          "name": "Extra Cheese",
+          "price": 50
+        },
+        {
+          "id": 2,
+          "name": "French Fries",
+          "price": 80
+        }
+      ],
+      "image": "veggie_burger.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Jumbo Burger",
+      "desc": "Jumbo sized chicken patty with potato fries flakes ",
+      "price": 350,
+      "addons": [
+        {
+          "id": 1,
+          "name": "Extra Cheese",
+          "price": 50
+        },
+        {
+          "id": 2,
+          "name": "French Fries",
+          "price": 80
+        }
+      ],
+      "image": "veggie_burger.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Jumbo Burger",
+      "desc": "Jumbo sized chicken patty with potato fries flakes ",
+      "price": 350,
+      "addons": [
+        {
+          "id": 1,
+          "name": "Extra Cheese",
+          "price": 50
+        },
+        {
+          "id": 2,
+          "name": "French Fries",
+          "price": 80
+        }
+      ],
+      "image": "veggie_burger.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Jumbo Burger",
+      "desc": "Jumbo sized chicken patty with potato fries flakes ",
+      "price": 350,
+      "addons": [
+        {
+          "id": 1,
+          "name": "Extra Cheese",
+          "price": 50
+        },
+        {
+          "id": 2,
+          "name": "French Fries",
+          "price": 80
+        }
+      ],
+      "image": "veggie_burger.jpg"
+    }
+  ],
+  "orders": [],
+  "bills": []
+}
