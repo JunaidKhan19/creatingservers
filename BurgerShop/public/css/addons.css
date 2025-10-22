@@ -1,3 +1,4 @@
+/* --- ELEMENTS --- */
 html, body {
   margin: 0;
   padding: 0;
@@ -6,7 +7,6 @@ html, body {
   color: #222;
 }
 
-/* Header */
 header {
   background: #ff9800;
   color: white;
@@ -22,6 +22,7 @@ header {
   top: 0;
 }
 
+/* --- HEADER AND BACK BUTTON --- */
 .backbtndiv {
     display: flex;
     width: 30%;
@@ -51,7 +52,7 @@ header {
   background: #ffe0b2;
 }
 
-/* Burger layout */
+/* --- BURGER LAYOUT --- */
 .burger-container {
   display: flex;
   align-items: stretch; /* ensures children (left, middle, right) match in height */
@@ -122,7 +123,7 @@ header {
   color: #333;
 }
 
-/* Footer */
+/* --- FOOTER --- */
 footer {
   background: #ff9800;
   color: white;
@@ -157,6 +158,8 @@ footer {
   background: #ffe0b2;
 }
 
+
+/* --- MEDIA QUERIES --- */
 @media (max-width: 768px) {
   .burger-container {
     flex-direction: column;
@@ -176,7 +179,7 @@ footer {
   }
 }
 
-/* Addons checkbox row formatting */
+/* --- ADDONS CHECKBOX --- */
 .addon-item {
   width: 100%;
   display: grid;
@@ -204,7 +207,7 @@ footer {
   color: #27ae60;
 }
 
-/* Right section total breakdown */
+/* --- RIGHT SECTION --- */
 .total-box {
   width: 100%;
   background: #fffefb;

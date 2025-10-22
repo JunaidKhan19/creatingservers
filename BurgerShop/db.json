@@ -73,46 +73,132 @@
         }
       ],
       "image": "veggie_burger.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Jumbo Burger",
-      "desc": "Jumbo sized chicken patty with potato fries flakes ",
-      "price": 350,
-      "addons": [
-        {
-          "id": 1,
-          "name": "Extra Cheese",
-          "price": 50
-        },
-        {
-          "id": 2,
-          "name": "French Fries",
-          "price": 80
-        }
-      ],
-      "image": "veggie_burger.jpg"
-    },
-    {
-      "id": 3,
-      "name": "Jumbo Burger",
-      "desc": "Jumbo sized chicken patty with potato fries flakes ",
-      "price": 350,
-      "addons": [
-        {
-          "id": 1,
-          "name": "Extra Cheese",
-          "price": 50
-        },
-        {
-          "id": 2,
-          "name": "French Fries",
-          "price": 80
-        }
-      ],
-      "image": "veggie_burger.jpg"
     }
   ],
-  "orders": [],
-  "bills": []
+  "orders": [
+    {
+      "id": "admin@example.com#1",
+      "email": "admin@example.com",
+      "items": [
+        {
+          "itemId": "1-1",
+          "id": 1,
+          "name": "Cheese Chicken Burger",
+          "addons": [
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            },
+            {
+              "name": "Mexican Sauce",
+              "price": 20
+            },
+            {
+              "name": "Italian Sauce",
+              "price": 25
+            }
+          ],
+          "price": 345
+        },
+        {
+          "itemId": "2-1",
+          "id": 2,
+          "name": "Veggie Burger",
+          "addons": [
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            },
+            {
+              "name": "French Fries",
+              "price": 80
+            }
+          ],
+          "price": 330
+        },
+        {
+          "itemId": "3-1",
+          "id": 3,
+          "name": "Jumbo Burger",
+          "addons": [
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            }
+          ],
+          "price": 400
+        }
+      ],
+      "totalAmount": 1075,
+      "createdAt": "2025-10-22T00:32:00.660Z",
+      "status": "Placed"
+    },
+    {
+      "id": "admin@example.com#2",
+      "email": "admin@example.com",
+      "items": [
+        {
+          "itemId": "1-1",
+          "id": 1,
+          "name": "Cheese Chicken Burger",
+          "addons": [
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            },
+            {
+              "name": "French Fries",
+              "price": 80
+            }
+          ],
+          "price": 380
+        },
+        {
+          "itemId": "2-1",
+          "id": 2,
+          "name": "Veggie Burger",
+          "addons": [
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            },
+            {
+              "name": "French Fries",
+              "price": 80
+            }
+          ],
+          "price": 330
+        },
+        {
+          "itemId": "3-1",
+          "id": 3,
+          "name": "Jumbo Burger",
+          "addons": [
+            {
+              "name": "French Fries",
+              "price": 80
+            }
+          ],
+          "price": 430
+        },
+        {
+          "itemId": "3-2",
+          "id": 3,
+          "name": "Jumbo Burger",
+          "addons": [
+            {
+              "name": "French Fries",
+              "price": 80
+            }
+          ],
+          "price": 430
+        }
+      ],
+      "totalAmount": 1570,
+      "createdAt": "2025-10-22T07:55:30.502Z",
+      "status": "Placed"
+    }
+  ],
+  "bills": [],
+  "cart": []
 }

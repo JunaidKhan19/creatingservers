@@ -1,3 +1,4 @@
+// ------------------- SIGNUP -------------------
 async function signup(event) {
     event.preventDefault();
 

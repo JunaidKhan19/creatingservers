@@ -1,13 +1,13 @@
-/* Make the whole page a flex column */
+/* --- ELEMENTS  --- */
 html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #fafafa;
-    color: #222;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #fafafa;
+  color: #222;
+  display: flex;
+  flex-direction: column;
 }
 
 header, footer {
@@ -17,6 +17,11 @@ header, footer {
   padding: 12px 0;
 }
 
+main {
+    flex: 1; /* this pushes footer to bottom if content is short */
+    display: flex;
+    flex-direction: column;
+}
 
 /* --- NAVBAR --- */
 .navbar {
@@ -71,13 +76,7 @@ header, footer {
   background-color: darkred;
 }
 
-/* --- MAIN BAR --- */
-main {
-    flex: 1; /* this pushes footer to bottom if content is short */
-    display: flex;
-    flex-direction: column;
-}
-
+/* --- ORDER COMPONENT  --- */
 .orders-container {
     display: flex;
     flex-wrap: wrap;
@@ -107,6 +106,11 @@ main {
 .order-card li {
     padding: 4px 0;
     font-size: 14px;
+}
+
+.order-card:hover {
+    background-color: #fff3e0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .total {

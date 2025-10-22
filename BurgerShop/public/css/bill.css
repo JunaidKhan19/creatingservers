@@ -1,3 +1,4 @@
+/* --- ELEMENTS --- */
 html, body {
     height: 100%;
     margin: 0;
@@ -33,6 +34,47 @@ footer {
     flex-shrink: 0;
 }
 
+/* --- NAVBAR --- */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* pushes left and right sections apart */
+  align-items: center;
+  background-color: #222;
+  padding: 10px 20px;
+  color: white;
+}
+
+.nav-btn {
+  height: 30px;
+  width: 80px;
+  position: relative; /* needed so child absolute anchors position against it */
+  background-color: #ff9800;
+  border: none;
+  margin-right: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.nav-btn a {
+  display: block;     
+  color: white;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: flex;   
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.nav-btn:hover, .nav-btn a:hover {
+  color: #222;
+  background-color: #f57c00;
+  transform: scale(1.05);
+}
+
+/* --- BILL CONTAINER --- */
 .bill-container {
     width: 90%;
     max-width: 400px;
@@ -60,8 +102,43 @@ footer {
 }
 
 .bill-container .total-summary {
+    display: flex;
+    justify-content: flex-end;
     font-weight: bold;
     margin-top: 10px;
+    padding-right: 5px;
+}
+
+.bill-item {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.item-header {
+    display: flex;
+    color: #ff7b00;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+.item-id {
+    font-size: 12px;
+    color: #3e3c3c;
+    margin-bottom: 5px;
+}
+
+.addons {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.addons li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-left: 5px;
 }
 
 .no-bill {

@@ -1,5 +1,142 @@
-this is a server based on express.js 
-express allows us to create server and provides us many functionalities like request, response and next.
-next helps us to use middlewares such that if a request-response is resolved what to do next.
-in express .use method is written to use pre defined middlewares but also we can use custom made middlewares.
-everything remains the same as in the http server just the way of writing routes is changed as we use .get method provided by express.js. 
+# 🍔 Burger Shop — Full-Stack Web Project  
+
+A full-stack burger ordering system built using **Node.js**, **Express.js**, 
+and a simple **file-based database (`db.json`)**.  
+It simulates an online burger shop where **users** can browse and order burgers, 
+while **admins** can manage products and view customer orders.  
+
+--------------------------------------------------------------------------------------------
+
+## 🚀 Features  
+
+### 👥 Authentication  
+- 🔐 **Admin/User login and signup**  
+- 🧠 **Passwords encrypted** using XOR logic for demonstration  
+- 💾 **Session persistence** — remembers the logged-in user using email in local storage  
+
+### 🧑‍💼 Admin Panel  
+- ➕ Add new products (name, price, addons, etc.)  
+- 📦 Manage all user orders  
+- 📈 View graphical sales data in the dashboard  
+
+### 🛍️ User Interface  
+- 🍔 Browse available burgers  
+- 🧾 Select addons dynamically (extra cheese, fries, sauces, etc.)  
+- 🛒 Add or remove items from cart  
+- 💰 View auto-calculated total and grand total  
+- 📦 Place orders — User can see past orders, instantly reflected on the admin panel.
+
+### 🧾 Billing  
+- ✅ Bill generation after successful order placement  
+- 🧮 Auto calculation of burger + addons cost  
+
+--------------------------------------------------------------------------------------------
+
+## 🧠 Tech Stack  
+
+|      Layer           |            Technologies Used                |
+|:---------------------|:--------------------------------------------|
+| **Frontend**         | HTML, CSS, JavaScript                       |
+| **Backend**          | Node.js, Express.js                         |
+| **Database**         | `db.json` file (mock DB)                    |
+| **Authentication**   | XOR encryption & equality check             |
+| **Storage**          | Public folder for images, JS, and CSS files |
+
+--------------------------------------------------------------------------------------------
+
+## 🧭 Pages Overview  
+
+| Page | Description |
+|------|--------------|
+| **Home** | Displays all available burgers with images and prices |
+| **Order** | Shows the user’s order history |
+| **Bill** | Displays bill summary with total and addons |
+| **About** | Information about the project and developer |
+
+
+--------------------------------------------------------------------------------------------
+
+
+## 📁 Folder Structure  
+
+BurgerShop/
+│
+├── public/
+│ ├── css/
+│ │ ├── about.css
+│ │ ├── addons.css
+│ │ └── (other styles)
+│ ├── images/
+│ └── //all js files
+│
+├── //all html files
+├── server.js
+├── db.json
+├── index.js
+├── package.json
+└── README.md
+
+
+--------------------------------------------------------------------------------------------
+
+## 🧑‍💻 About the Developer  
+
+Hi, I’m **Khan Junaid**, a passionate full-stack web developer who enjoys building secure, 
+scalable, and creative applications.  
+This project demonstrates practical backend logic, routing, and authentication using Node.js 
+and Express.js.  
+It’s intentionally kept simple and educational, with `db.json` as a mock database.
+
+> 💡 *Note:*  
+> This project was created for learning purposes — to explore how backend routes, authentication, 
+> and file-based data management work together.
+
+--------------------------------------------------------------------------------------------
+
+## ⚙️ How to Run the Project  
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/JunaidKhan19/BurgerShop.git
+   cd BurgerShop
+
+2. Install dependencies
+   npm install
+
+3. Run the app
+   npm run dev
+
+4. Open your browser and go to
+   👉 http://localhost:3000
+
+
+--------------------------------------------------------------------------------------------
+
+## 📸 Screenshots & Demo
+
+### User Interface
+![User View](assets/screenshots/user-view.png)
+
+### Admin Dashboard
+![Admin View](assets/screenshots/admin-dashboard.png)
+
+### Demo Video
+[![Watch Demo](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://youtu.be/dQw4w9WgXcQ)
+
+--------------------------------------------------------------------------------------------
+
+## 📫 Connect With Me  
+
+<p align="center">
+  <a href="mailto:khanjunaid1719@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
+  </a>
+  &nbsp;
+  <a href="https://github.com/JunaidKhan19" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+  &nbsp;
+  <a href="https://www.linkedin.com/in/junaidkhan1719/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+</p>
