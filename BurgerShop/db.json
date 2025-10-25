@@ -3,63 +3,96 @@
     {
       "username": "admin",
       "email": "admin@example.com",
+      "role": "admin",
       "password": "KNGCDj\u001b\u0018\u0019"
+    },
+    {
+      "username": "junaidkhan",
+      "email": "khanjunaid@gmail.com",
+      "password": "@_DKCNABKD",
+      "role": "user"
     }
   ],
   "burgers": [
     {
       "id": 1,
-      "name": "Cheese Chicken Burger",
-      "desc": "Juicy chicken patty with cheese",
-      "price": 250,
+      "name": "Cheese Burger",
+      "desc": "Slice of cheese and shredded mozzarella toppings, spicy tangy sauce, chicken patty.",
+      "price": 219,
+      "image": "1761326967753.jpg",
       "addons": [
         {
           "id": 1,
+          "name": "Fries",
+          "price": 60
+        },
+        {
+          "id": 2,
           "name": "Extra Cheese",
           "price": 50
         },
         {
-          "id": 2,
-          "name": "French Fries",
-          "price": 80
-        },
-        {
           "id": 3,
-          "name": "Mexican Sauce",
-          "price": 20
+          "name": "Mexican Dip",
+          "price": 70
         },
         {
           "id": 4,
           "name": "Italian Sauce",
-          "price": 25
+          "price": 70
+        },
+        {
+          "id": 5,
+          "name": "Vegan Mayonnaise",
+          "price": 40
+        },
+        {
+          "id": 6,
+          "name": "Regular Mayonnaise",
+          "price": 30
         }
-      ],
-      "image": "cheese_burger.jpg"
+      ]
     },
     {
       "id": 2,
-      "name": "Veggie Burger",
-      "desc": "Healthy veggie patty with fresh salad",
-      "price": 200,
+      "name": "Italian Chicken Burger",
+      "desc": "Italian styled veggies and chicken patty, Italian sauce.",
+      "price": 259,
+      "image": "1761328208348.jpg",
       "addons": [
         {
           "id": 1,
+          "name": "Extra Italian Sauce",
+          "price": 70
+        },
+        {
+          "id": 2,
+          "name": "Red Chilli Sauce",
+          "price": 15
+        },
+        {
+          "id": 3,
           "name": "Extra Cheese",
           "price": 50
         },
         {
-          "id": 2,
-          "name": "French Fries",
-          "price": 80
+          "id": 4,
+          "name": "Regular Mayonnaise",
+          "price": 30
+        },
+        {
+          "id": 5,
+          "name": "Vegan Mayonnaise",
+          "price": 40
         }
-      ],
-      "image": "veggie_burger.jpg"
+      ]
     },
     {
       "id": 3,
-      "name": "Jumbo Burger",
-      "desc": "Jumbo sized chicken patty with potato fries flakes ",
-      "price": 350,
+      "name": "Chicken Burger",
+      "desc": "Regular chicken patty, lettuce and other veggies.",
+      "price": 159,
+      "image": "1761328506403.jpg",
       "addons": [
         {
           "id": 1,
@@ -68,134 +101,249 @@
         },
         {
           "id": 2,
-          "name": "French Fries",
-          "price": 80
+          "name": "Regular Mayonnaise",
+          "price": 30
+        },
+        {
+          "id": 3,
+          "name": "Vegan Mayonnaise",
+          "price": 40
+        },
+        {
+          "id": 4,
+          "name": "Italian Sauce",
+          "price": 70
+        },
+        {
+          "id": 5,
+          "name": "Mexican Dip",
+          "price": 70
+        },
+        {
+          "id": 6,
+          "name": "Chili sauce",
+          "price": 15
         }
-      ],
-      "image": "veggie_burger.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Mexican Burger",
+      "desc": "Mexican styled sauces, smokey chicken patty, spicy and tangy flavors.",
+      "price": 279,
+      "image": "1761329019021.jpg",
+      "addons": [
+        {
+          "id": 1,
+          "name": "Extra Cheese",
+          "price": 50
+        },
+        {
+          "id": 2,
+          "name": "Regular Mayonnaise",
+          "price": 30
+        },
+        {
+          "id": 3,
+          "name": "Vegan Mayonnaise",
+          "price": 40
+        },
+        {
+          "id": 4,
+          "name": "Fries",
+          "price": 60
+        },
+        {
+          "id": 5,
+          "name": "Tacos and Dips",
+          "price": 80
+        },
+        {
+          "id": 6,
+          "name": "Mexican dip",
+          "price": 70
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Jumbo Burger",
+      "desc": "Double chicken patty, double cheese slice, less veggies.",
+      "price": 299,
+      "image": "1761329256573.jpg",
+      "addons": [
+        {
+          "id": 1,
+          "name": "Mexican Dip",
+          "price": 70
+        },
+        {
+          "id": 2,
+          "name": "Italian Sauce",
+          "price": 70
+        },
+        {
+          "id": 3,
+          "name": "Chili Sauce",
+          "price": 15
+        },
+        {
+          "id": 4,
+          "name": "Extra Cheese",
+          "price": 50
+        }
+      ]
     }
   ],
   "orders": [
     {
-      "id": "admin@example.com#1",
-      "email": "admin@example.com",
+      "id": "khanjunaid@gmail.com#5",
+      "email": "khanjunaid@gmail.com",
       "items": [
         {
-          "itemId": "1-1",
-          "id": 1,
-          "name": "Cheese Chicken Burger",
+          "itemId": "4-1",
+          "id": 4,
+          "name": "Mexican Burger",
           "addons": [
             {
               "name": "Extra Cheese",
               "price": 50
             },
             {
-              "name": "Mexican Sauce",
-              "price": 20
+              "name": "Regular Mayonnaise",
+              "price": 30
             },
             {
-              "name": "Italian Sauce",
-              "price": 25
+              "name": "Fries",
+              "price": 60
+            },
+            {
+              "name": "Mexican dip",
+              "price": 70
             }
           ],
-          "price": 345
+          "price": 489,
+          "actualPrice": 279,
+          "quantity": 1
         },
         {
-          "itemId": "2-1",
-          "id": 2,
-          "name": "Veggie Burger",
+          "itemId": "5-1",
+          "id": 5,
+          "name": "Jumbo Burger",
           "addons": [
+            {
+              "name": "Mexican Dip",
+              "price": 70
+            },
             {
               "name": "Extra Cheese",
               "price": 50
-            },
-            {
-              "name": "French Fries",
-              "price": 80
             }
           ],
-          "price": 330
+          "price": 419,
+          "actualPrice": 299,
+          "quantity": 1
         },
         {
           "itemId": "3-1",
           "id": 3,
-          "name": "Jumbo Burger",
+          "name": "Chicken Burger",
           "addons": [
             {
               "name": "Extra Cheese",
               "price": 50
+            },
+            {
+              "name": "Chili sauce",
+              "price": 15
             }
           ],
-          "price": 400
+          "price": 224,
+          "actualPrice": 159,
+          "quantity": 1
         }
       ],
-      "totalAmount": 1075,
-      "createdAt": "2025-10-22T00:32:00.660Z",
+      "totalAmount": 1132,
+      "createdAt": "2025-10-25T12:55:36.006Z",
       "status": "Placed"
     },
     {
-      "id": "admin@example.com#2",
-      "email": "admin@example.com",
+      "id": "khanjunaid@gmail.com#6",
+      "email": "khanjunaid@gmail.com",
       "items": [
         {
-          "itemId": "1-1",
-          "id": 1,
-          "name": "Cheese Chicken Burger",
+          "itemId": "4-1",
+          "id": 4,
+          "name": "Mexican Burger",
           "addons": [
             {
               "name": "Extra Cheese",
               "price": 50
             },
             {
-              "name": "French Fries",
+              "name": "Tacos and Dips",
               "price": 80
+            },
+            {
+              "name": "Mexican dip",
+              "price": 70
             }
           ],
-          "price": 380
+          "price": 479,
+          "actualPrice": 279,
+          "quantity": 1
         },
         {
-          "itemId": "2-1",
-          "id": 2,
-          "name": "Veggie Burger",
+          "itemId": "4-2",
+          "id": 4,
+          "name": "Mexican Burger",
           "addons": [
             {
               "name": "Extra Cheese",
               "price": 50
             },
             {
-              "name": "French Fries",
+              "name": "Regular Mayonnaise",
+              "price": 30
+            },
+            {
+              "name": "Tacos and Dips",
               "price": 80
+            },
+            {
+              "name": "Mexican dip",
+              "price": 70
             }
           ],
-          "price": 330
+          "price": 509,
+          "actualPrice": 279,
+          "quantity": 1
         },
         {
           "itemId": "3-1",
           "id": 3,
-          "name": "Jumbo Burger",
+          "name": "Chicken Burger",
           "addons": [
             {
-              "name": "French Fries",
-              "price": 80
-            }
-          ],
-          "price": 430
-        },
-        {
-          "itemId": "3-2",
-          "id": 3,
-          "name": "Jumbo Burger",
-          "addons": [
+              "name": "Extra Cheese",
+              "price": 50
+            },
             {
-              "name": "French Fries",
-              "price": 80
+              "name": "Vegan Mayonnaise",
+              "price": 40
+            },
+            {
+              "name": "Italian Sauce",
+              "price": 70
             }
           ],
-          "price": 430
+          "price": 319,
+          "actualPrice": 159,
+          "quantity": 1
         }
       ],
-      "totalAmount": 1570,
-      "createdAt": "2025-10-22T07:55:30.502Z",
+      "totalAmount": 1307,
+      "createdAt": "2025-10-25T13:00:34.732Z",
       "status": "Placed"
     }
   ],

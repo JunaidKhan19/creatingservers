@@ -1,0 +1,211 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: #fff8e1;
+    color: #333;
+}
+
+header {
+  background: #ff9800;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  font-size: larger;
+  font-style: italic;
+  padding: 12px;
+  position: sticky;
+  top: 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #ff9800;
+    color: white;
+    flex-shrink: 0;
+}
+
+.backbtndiv {
+    display: flex;
+    width: 30%;
+    border: #222;
+}
+
+.headercontentdiv {
+    text-align: center;
+    width: 40%;
+    border: #222;
+}
+
+#backBtn {
+  background: white;
+  border: none;
+  color: #ff9800;
+  font-weight: bold;
+  margin-right: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: 0.2s ease;
+}
+
+#backBtn:hover {
+  background: #ffe0b2;
+}
+
+.addBurgerContainer {
+    width: 700px;
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: none; /* hidden until bill is generated */
+}
+
+.add-burger-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 750px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fefefe;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.add-burger-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.add-burger-form input,
+.add-burger-form textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+}
+
+.image-preview img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* ---------- ADDONS SECTION ---------- */
+.addons-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.addons-header h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 3px;
+}
+
+#addonsContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.addon-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 70%;
+    background: #fff3e0;
+    border: 1px solid #ffcc80;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: 0.2s ease;
+}
+
+.addon-item:hover {
+    background: #ffe0b2;
+}
+
+.addon-item input {
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+.addon-item .addon-name {
+    flex: 2;
+}
+
+.addon-item .addon-price {
+    flex: 1; 
+}
+
+.remove-addon {
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.remove-addon:hover {
+    background: #e60000;
+}
+
+/* Add Addon Button */
+#addAddonBtn {
+    margin: 0;
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+#addAddonBtn:hover {
+    background: #45a049;
+}
+
+.submitBtn {
+    background-color: #ffb347;
+    color: black;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.submitBtn:hover {
+    background-color: #ffa500;
+}

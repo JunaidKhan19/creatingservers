@@ -6,9 +6,6 @@ async function login(event) {
     const password = document.getElementById("password").value.trim();
     const message = document.getElementById("message");
 
-    console.log(email);
-    console.log(password);
-
     if (!email || !password) {
         message.textContent = "Please fill both fields.";
         message.style.color = "red";
@@ -24,14 +21,14 @@ async function login(event) {
 
         const data = await res.json();
 
-        console.log(data.message);
-
         message.textContent = data.message || "Login response received";
         message.style.color = res.ok ? "green" : "red";
 
         // Redirect to /home if login successful
         if (res.ok && data.redirect) {
             localStorage.setItem("email", email);
+            localStorage.setItem("username", data.username);
+            localStorage.setItem("role", data.role); // ✅ store admin/user role
 
             setTimeout(() => {
                 window.location.href = data.redirect;

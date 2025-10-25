@@ -45,12 +45,15 @@ async function renderBill() {
             <div class="bill-item">
                 <div class="item-header">
                     <span class="item-name"><strong>${item.name}</strong></span>
-                    <span class="item-price">₹${item.price}</span>
+                    <span class="item-price">₹${item.actualPrice}</span>
                 </div>
                 <div class="item-id">Item ID: ${item.itemId}</div>
                 ${item.addons?.length ? `<ul class="addons">
                     ${item.addons.map(a => `<li><span>${a.name}</span><span>₹${a.price}</span></li>`).join("")}
                 </ul>` : "<small>No addons</small>"}
+                <div class="item-total">
+                    <strong>Total for this item:</strong> ₹${item.price.toFixed(2)}
+                </div>
             </div>
         `).join("")}
         <hr />

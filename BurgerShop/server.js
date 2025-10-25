@@ -1,9 +1,9 @@
-import dotenv from "dotenv"
-import express from "express"
+import dotenv from "dotenv";
+import express from "express";
 import fs from "fs";
-import path from "path"
-import { json } from "stream/consumers";
-import { fileURLToPath } from "url"
+import path from "path";
+import { fileURLToPath } from "url";
+import { upload } from "./multer.js"; 
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -48,9 +48,6 @@ function writeDB(data) {
 
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname, "/public"))); 
-//for showing static files like images, etc.
-
 app.get("/", (req, res, next) => {
     res.sendFile(path.join(__dirname,"login.html"))
 })
@@ -75,10 +72,17 @@ app.get("/bill/", (req, res, next) => {
     res.sendFile(path.join(__dirname, "bill.html"));
 })
 
+app.get("/addBurger", (req, res, next) => {
+    res.sendFile(path.join(__dirname, "addBurger.html"));
+})
+
 app.get("/addtheaddons", (req, res, next) => {
     res.sendFile(path.join(__dirname, "addons.html"));
 })
 
+app.get("/reports", (req, res, next) => {
+    res.sendFile(path.join(__dirname, "adminReports.html"));
+})
 
 // ===== API: SIGNUP =====
 app.post("/api/signup", (req, res) => {
@@ -93,7 +97,12 @@ app.post("/api/signup", (req, res) => {
     if (exists) return res.status(400).json({ message: "User already exists." });
 
     const encrypted = xorEncryptDecrypt(password, SECRET_KEY);
-    db.users.push({ username, email: email.toLowerCase(), password: encrypted });
+    db.users.push({ 
+        username, 
+        email: email.toLowerCase(), 
+        password: encrypted,
+        role: "user" 
+    });
     writeDB(db);
 
     return res.json({ message: "Signup successful" });
@@ -117,7 +126,94 @@ app.post("/api/login", (req, res) => {
         return res.status(401).json({ message: "Invalid credentials." });
     }
 
-    return res.json({ message: "Login successful", redirect: "/home" });
+    return res.json({ 
+        message: "Login successful", 
+        redirect: "/home",
+        username: user.username,
+        email: user.email,
+        role: user.role
+    });
+});
+
+// ===== API: ADD BURGERS =====
+app.post("/api/burgers", upload.single("image"), async (req, res) => {
+    try {
+        const { role, name, desc, price } = req.body;
+
+        if (role !== "admin") {
+            return res.status(403).json({ message: "Forbidden: Only admin can add burgers." });
+        }
+
+        const db = readDB();
+        const burgers = db.burgers || [];
+
+        let addons = [];
+        if (req.body.addons) {
+        try {
+            addons = JSON.parse(req.body.addons);
+        } catch {
+            addons = [];
+        }
+        }
+
+        const imagePath = req.file ? req.file.filename : (req.body.image || "default.jpg");
+
+        const newBurger = {
+            id: burgers.length > 0 ? burgers[burgers.length - 1].id + 1 : 1,
+            name,
+            desc,
+            price: Number(price),
+            image: imagePath,
+            addons: addons.map((addon, index) => ({
+                id: index + 1,
+                name: addon.name,
+                price: Number(addon.price),
+            })),
+        };
+
+        burgers.push(newBurger);
+        db.burgers = burgers;
+        writeDB(db);
+
+        res.status(201).json({
+        message: "Burger added successfully!",
+        burger: newBurger,
+        });
+    } catch (error) {
+        console.error("Error adding burger:", error);
+        res.status(500).json({ message: "Error adding burger" });
+    }
+});
+
+// ===== API: DELETE BURGERS =====
+app.delete("/api/burgers/:id", (req, res) => {
+    const { role } = req.body;
+    const burgerId = parseInt(req.params.id);
+
+    if (role !== "admin") {
+        return res.status(403).json({ message: "Forbidden: Only admin can delete burgers." });
+    }
+
+    const db = readDB();
+    const burgers = db.burgers || [];
+
+    const burgerIndex = burgers.findIndex(b => b.id === burgerId);
+    if (burgerIndex === -1) {
+        return res.status(404).json({ message: "Burger not found." });
+    }
+
+    const imagePath = path.join(__dirname, "public", "images", burgers[burgerIndex].image);
+    if (fs.existsSync(imagePath)) {
+        fs.unlink(imagePath, (err) => {
+            if (err) console.warn("Failed to delete image:", err);
+        });
+    }
+
+    burgers.splice(burgerIndex, 1);
+    db.burgers = burgers;
+    writeDB(db);
+
+    res.json({ message: "Burger deleted successfully!" });
 });
 
 // ===== API: FETCH BURGERS =====
@@ -174,7 +270,10 @@ app.get("/api/cart", (req, res) => {
 // ------------------- UPDATE CART ITEM (Addons / Price / Quantity) -------------------
 app.put("/api/cart/:itemId", (req, res) => {
     const { itemId } = req.params;
-    const { email, addons, price } = req.body;
+    const { email, addons, price, actualPrice } = req.body;
+    console.log("PUT body received:", req.body);
+    console.log("Received actualPrice:", actualPrice);
+    console.log("email:", email, " price: ", price);
 
     if (!email && !itemId) return res.status(400).json({ message: "Invalid request" });
 
@@ -185,10 +284,10 @@ app.put("/api/cart/:itemId", (req, res) => {
 
     if (!cartItem) return res.status(404).json({ message: "Cart item not found" });
 
-    if (!addons || !price) return console.log("no addons selected");
+    cartItem.actualPrice = actualPrice;
 
-    cartItem.addons = Array.isArray(addons) ? addons : [];
-    cartItem.price = price; 
+    if (Array.isArray(addons)) cartItem.addons = addons;
+    if (typeof price === "number" && !isNaN(price)) cartItem.price = price;
 
     writeDB(db);
 
@@ -253,7 +352,9 @@ app.post("/api/placeOrder", (req, res) => {
             id: item.id,
             name: item.name,
             addons: item.addons || [],
-            price: item.price
+            price: item.price,
+            actualPrice: item.actualPrice,
+            quantity : item.quantity,
         })),
         totalAmount,
         createdAt: new Date().toISOString(),
@@ -266,16 +367,15 @@ app.post("/api/placeOrder", (req, res) => {
     }
     writeDB(db);
 
+    const encodedId = encodeURIComponent(newOrderId);
     res.status(201).json({
         success: true,
         message: "Order placed successfully!",
         orderId: newOrderId,
         order: newOrder,
-        redirect: `/bill?orderId=${newOrderId}`
+        redirect: `/bill?orderId=${encodedId}`
     });
 });
-
-
 
 // ===== API: FETCH ORDERS =====
 app.get("/api/orders", (req, res) => {
@@ -292,6 +392,44 @@ app.get("/api/orders/:orderId", (req, res) => {
     if (!order) return res.status(404).json({ message: "Order not found" });
     res.json(order);
 });
+
+app.get("/api/stats", (req, res) => {
+    const db = readDB();
+    const orders = db.orders;
+
+    if (!orders || orders.length === 0) {
+        return res.json({ message: "No orders yet.", stats: {} });
+    }
+
+    const totalSales = orders.reduce((sum, o) => sum + o.totalAmount, 0);
+
+    const totalOrders = orders.length;
+
+    const burgerSales = {};
+    orders.forEach(order => {
+        order.items.forEach(item => {
+            if (!burgerSales[item.name]) burgerSales[item.name] = 0;
+            burgerSales[item.name] += item.price;
+        });
+    });
+
+    const salesPerDay = {};
+    orders.forEach(order => {
+        const day = new Date(order.createdAt).toLocaleDateString();
+        salesPerDay[day] = (salesPerDay[day] || 0) + order.totalAmount;
+    });
+
+    const avgOrderValue = totalSales / totalOrders;
+
+    res.json({
+        totalSales,
+        totalOrders,
+        avgOrderValue,
+        burgerSales,
+        salesPerDay
+    });
+});
+
 
 app.use(express.static(path.join(__dirname, "/public"))); 
 //for showing static files like images, etc.

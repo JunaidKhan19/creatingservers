@@ -18,9 +18,9 @@ header, footer {
 }
 
 main {
-    flex: 1; /* this pushes footer to bottom if content is short */
-    display: flex;
-    flex-direction: column;
+  flex: 1; /* this pushes footer to bottom if content is short */
+  display: flex;
+  flex-direction: column;
 }
 
 /* --- NAVBAR --- */

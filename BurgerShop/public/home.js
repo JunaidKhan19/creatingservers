@@ -1,5 +1,7 @@
 // Global Cart
 let cart = [];
+const role = localStorage.getItem("role"); // saved after login
+const burgersContainer = document.getElementById("burgerContainer");
 
 // ------------------- RENDER CART -------------------
 async function renderCart() {
@@ -87,7 +89,7 @@ function renderCartFooter(total) {
     document.getElementById("btnAddAddons").addEventListener("click", saveCart);
 }
 
-// ------------------- ADD / REMOVE -------------------
+// ------------------- ADD / REMOVE IN CART -------------------
 async function addToCart(burger) {
     const email = localStorage.getItem("email");
     if (!email) return alert("Please log in!");
@@ -199,17 +201,66 @@ async function fetchBurgers() {
         const container = document.getElementById("burgerContainer");
         container.innerHTML = "";
 
+        if (role === "admin") {
+            const addCard = document.createElement("div");
+            addCard.id = "addBurger";
+            addCard.classList.add("add-burger-card");
+
+            addCard.innerHTML = `
+                <div class="add-burger-inner">
+                    <div class="cardImg"><div class="plus-sign">+</div></div>                    
+                    <div class="cardTitle">Add Burger</div>
+                </div>
+            `;
+            addCard.addEventListener("click", () => {
+                window.location.href = "/addBurger";
+            });
+            burgersContainer.appendChild(addCard);
+        }
+
+
         burgers.forEach(burger => {
             const card = document.createElement("div");
             card.classList.add("card-component");
             card.innerHTML = `
-                <div class="cardImg"><img src="${burger.image}" alt="${burger.name}"></div>
+                <div class="cardImg"><img src="/images/${burger.image}" alt="${burger.name}"></div>
                 <div class="cardTitle">${burger.name}</div>
                 <div class="cardDesc">${burger.desc}</div>
                 <div class="cardPrice">₹${burger.price}</div>
-                <button class="selectBtn">Select</button>
+                <button class="cardBtn"></button>
             `;
-            card.querySelector(".selectBtn").addEventListener("click", () => addToCart(burger));
+            
+            const button = card.querySelector(".cardBtn");
+
+            if (role === "admin") {
+                button.textContent = "Remove Burger";
+                button.classList.add("removeBtn");
+                button.addEventListener("click", async () => {
+                    if (confirm(`Remove ${burger.name}?`)) {
+                        try {
+                            const res = await fetch(`/api/burgers/${burger.id}`, {
+                                method: "DELETE",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({ role })
+                            });
+                            const data = await res.json();
+                            if (res.ok) {
+                                alert("Burger removed successfully!");
+                                fetchBurgers(); // refresh list
+                            } else {
+                                alert(data.message || "Failed to remove burger");
+                            }
+                        } catch (err) {
+                            console.error("Error removing burger:", err);
+                        }
+                    }
+                });
+            } else {
+                button.textContent = "Select";
+                button.classList.add("selectBtn");
+                button.addEventListener("click", () => addToCart(burger));
+            }
+
             container.appendChild(card);
         });
 
@@ -236,15 +287,25 @@ async function fetchUserCart(email) {
     }
 }
 
-
 // ------------------- LOGOUT -------------------
 function logout() {
     localStorage.removeItem("email");
+    localStorage.removeItem("username");
+    localStorage.removeItem("role");
     window.location.href = "/";
 }
 
 // ------------------- INITIALIZE ONLOAD -------------------
 window.addEventListener("DOMContentLoaded", () => {
+    const role = localStorage.getItem("role");
+    const navLeft = document.querySelector(".nav-left");
+    if (role === "admin" && navLeft) {
+        const adminBtn = document.createElement("button");
+        adminBtn.classList.add("nav-btn");
+        adminBtn.innerHTML = `<a href="/reports">Reports</a>`; 
+        navLeft.appendChild(adminBtn);
+    }
+
     fetchBurgers();
     renderCart();
 });

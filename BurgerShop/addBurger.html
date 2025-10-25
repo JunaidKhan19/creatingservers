@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Burger</title>
+    <link rel="stylesheet" href="/css/addBurger.css">
+</head>
+<body>
+    <header>
+        <div class="backbtndiv">
+            <button id="backBtn">⬅ Back to Home</button>
+        </div>
+        <div class="headercontentdiv">
+            <p>Add new burger</p>
+        </div>
+    </header>
+
+    <main id="addBurgerContainer">
+        <form id="addBurgerForm" class="add-burger-form">
+        <label>
+            Burger Name:
+            <input type="text" id="burgerName" placeholder="Enter burger name" required />
+        </label>
+
+        <label>
+            Description:
+            <textarea id="burgerDesc" placeholder="Enter description" rows="3" required></textarea>
+        </label>
+
+        <label>
+            Price (₹):
+            <input type="number" id="burgerPrice" placeholder="Enter price" min="1" required />
+        </label>
+
+        <div id="imagePreview" class="image-preview"></div>
+        <label>
+            Image:
+            <input type="file" id="burgerImage" accept="image/*" required />
+        </label>
+
+        <div class="addons-header">
+            <h4>Addons</h4>
+            <button type="button" id="addAddonBtn">+ Add Addon</button>
+        </div>
+        <div id="addonsContainer"></div>
+
+        <button type="submit" class="submitBtn">Add Burger</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Made by <b>Khan Junaid</b></p>
+    </footer>
+  
+    <script src="/addBurger.js"></script>
+</body>
+</html>

@@ -73,7 +73,6 @@ main {
   background-color: darkred;
 }
 
-
 /* --- MAIN BAR --- */
 .main-bar {
   flex-grow: 1;
@@ -150,6 +149,41 @@ main {
   background: #f57c00;
 }
 
+/* --- ADD BURGER CARD --- */
+.add-burger-card {
+  border: 2px dashed #888;
+  background-color: #f9f9f9;
+  color: #444;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-burger-card:hover {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transform: scale(1.02); 
+}
+
+.plus-sign {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #555;
+}
+
+.add-burger-card h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+
 /* --- BURGER CARD --- */
 .main-container {
   display: flex;
@@ -178,7 +212,7 @@ main {
   border-radius: 5px;
 }
 
-.selectBtn {
+.cardBtn {
   margin-top: 8px;
   padding: 6px 10px;
   cursor: pointer;

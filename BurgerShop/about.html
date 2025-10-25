@@ -110,5 +110,24 @@
     <footer>
         <p>Made by <b>Khan Junaid</b></p>
     </footer>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("email");
+            localStorage.removeItem("username");
+            localStorage.removeItem("role");
+            window.location.href = "/";
+        }
+        window.addEventListener("DOMContentLoaded", () => {
+            const role = localStorage.getItem("role");
+            const navLeft = document.querySelector(".nav-left");
+            if (role === "admin" && navLeft) {
+                const adminBtn = document.createElement("button");
+                adminBtn.classList.add("nav-btn");
+                adminBtn.innerHTML = `<a href="/reports">Reports</a>`;
+                navLeft.appendChild(adminBtn);
+            }
+        });
+    </script>
 </body>
 </html>

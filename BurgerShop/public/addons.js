@@ -65,7 +65,7 @@ async function renderAddons() {
         const left = document.createElement("div");
         left.className = "burger-left";
         left.innerHTML = `
-            <img src="${burgerInfo.image}" alt="${burgerInfo.name}" />
+            <img src="/images/${burgerInfo.image}" alt="${burgerInfo.name}" />
             <h3>#${burgerInfo.name} <small>-${burger.itemId}</small></h3>
             <p>${burgerInfo.desc || ""}</p>
             <p><strong>Price:</strong> ₹${burger.price}</p>
@@ -95,13 +95,13 @@ async function renderAddons() {
             <div class="total-box">
                 <div class="total-line">
                     <span>${burgerInfo.name}</span>
-                    <span>₹${burger.price}</span>
+                    <span>₹${burgerInfo.price}</span>
                 </div>
                 <div class="addons-selected"></div>
                 <hr />
                 <div class="total-line total-bottom">
                     <strong>Total:</strong>
-                    <strong>₹<span class="price">${burger.price}</span></strong>
+                    <strong>₹<span class="totalPrice">${burger.price}</span></strong>
                 </div>
             </div>
         `;
@@ -116,7 +116,7 @@ async function renderAddons() {
         burgerTotals[cartKey] = burger.price;
 
         const checkboxes = middle.querySelectorAll("input[type='checkbox']");
-        const totalPriceElement = right.querySelector(".price");
+        const totalPriceElement = right.querySelector(".totalPrice");
         const selectedAddonsDiv = right.querySelector(".addons-selected");
 
         let updateTimeout;
@@ -152,7 +152,7 @@ async function renderAddons() {
                     await fetch(`/api/cart/${burger.itemId}`, {
                         method: "PUT",
                         headers: { "Content-Type": "application/json" },
-                        body: JSON.stringify({ email: burger.email, addons: selectedAddons, price: total })
+                        body: JSON.stringify({ email: burger.email, addons: selectedAddons, price: total,  actualPrice: burgerInfo.price })
                     });
                 }, 300);
             });
@@ -198,14 +198,12 @@ document.getElementById("placeOrderBtn").addEventListener("click", async () => {
             alert(`Failed to place order: ${data.message}`);
         }
     } catch (err) {
-        console.error("Error placing order:", err);
         alert("Server error while placing order!");
     }
 });
 
 // ------------------- INITIALIZE ONLOAD -------------------
 window.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM loaded");
     renderAddons();
 });
 
