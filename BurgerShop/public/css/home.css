@@ -151,6 +151,7 @@ main {
 
 /* --- ADD BURGER CARD --- */
 .add-burger-card {
+  width: 375px;
   border: 2px dashed #888;
   background-color: #f9f9f9;
   color: #444;
@@ -192,7 +193,8 @@ main {
 }
 
 .card-component {
-  width: 300px;
+  width: 400px;
+  margin-left: 15px;
   background: white;
   border: 1px solid #ddd;
   border-radius: 10px;

@@ -1,5 +1,3 @@
-import Chart from 'chart.js/auto';
-
 const role = localStorage.getItem("role");
 if (role !== "admin") {
     alert("Access denied! Admins only.");

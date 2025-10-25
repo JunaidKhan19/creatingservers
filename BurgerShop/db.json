@@ -7,9 +7,21 @@
       "password": "KNGCDj\u001b\u0018\u0019"
     },
     {
+      "username": "safwanshaikh",
+      "email": "safwan@gmail",
+      "password": "YKL]KDj\u001b\u0018\u0019",
+      "role": "user"
+    },
+    {
       "username": "junaidkhan",
       "email": "khanjunaid@gmail.com",
-      "password": "@_DKCNABKD",
+      "password": "@NABKD",
+      "role": "user"
+    },
+    {
+      "username": "arsalanshaikh",
+      "email": "arsalan@gmail.com",
+      "password": "KXYKFKDYBKCAB",
       "role": "user"
     }
   ],
@@ -193,84 +205,60 @@
           "price": 50
         }
       ]
+    },
+    {
+      "id": 6,
+      "name": "Flaming Fish Burger",
+      "desc": "crispy fried fish and paprika patties, creamy and spicy sauce.",
+      "price": 265,
+      "image": "1761426285375.jpg",
+      "addons": [
+        {
+          "id": 1,
+          "name": "Mozzarella Stuffings",
+          "price": 60
+        },
+        {
+          "id": 2,
+          "name": "Jalapeños slices (for extra spice)",
+          "price": 50
+        },
+        {
+          "id": 3,
+          "name": "Tartar sauce (recommended)",
+          "price": 60
+        },
+        {
+          "id": 4,
+          "name": "Fries and Onion rings",
+          "price": 100
+        }
+      ]
     }
   ],
   "orders": [
     {
-      "id": "khanjunaid@gmail.com#5",
-      "email": "khanjunaid@gmail.com",
+      "id": "safwan@gmail#1",
+      "email": "safwan@gmail",
       "items": [
         {
-          "itemId": "4-1",
-          "id": 4,
-          "name": "Mexican Burger",
+          "itemId": "2-1",
+          "id": 2,
+          "name": "Italian Chicken Burger",
           "addons": [
             {
-              "name": "Extra Cheese",
-              "price": 50
-            },
-            {
-              "name": "Regular Mayonnaise",
-              "price": 30
-            },
-            {
-              "name": "Fries",
-              "price": 60
-            },
-            {
-              "name": "Mexican dip",
-              "price": 70
-            }
-          ],
-          "price": 489,
-          "actualPrice": 279,
-          "quantity": 1
-        },
-        {
-          "itemId": "5-1",
-          "id": 5,
-          "name": "Jumbo Burger",
-          "addons": [
-            {
-              "name": "Mexican Dip",
+              "name": "Extra Italian Sauce",
               "price": 70
             },
             {
-              "name": "Extra Cheese",
-              "price": 50
+              "name": "Vegan Mayonnaise",
+              "price": 40
             }
           ],
-          "price": 419,
-          "actualPrice": 299,
+          "price": 369,
+          "actualPrice": 259,
           "quantity": 1
         },
-        {
-          "itemId": "3-1",
-          "id": 3,
-          "name": "Chicken Burger",
-          "addons": [
-            {
-              "name": "Extra Cheese",
-              "price": 50
-            },
-            {
-              "name": "Chili sauce",
-              "price": 15
-            }
-          ],
-          "price": 224,
-          "actualPrice": 159,
-          "quantity": 1
-        }
-      ],
-      "totalAmount": 1132,
-      "createdAt": "2025-10-25T12:55:36.006Z",
-      "status": "Placed"
-    },
-    {
-      "id": "khanjunaid@gmail.com#6",
-      "email": "khanjunaid@gmail.com",
-      "items": [
         {
           "itemId": "4-1",
           "id": 4,
@@ -294,29 +282,48 @@
           "quantity": 1
         },
         {
-          "itemId": "4-2",
-          "id": 4,
-          "name": "Mexican Burger",
+          "itemId": "5-1",
+          "id": 5,
+          "name": "Jumbo Burger",
           "addons": [
+            {
+              "name": "Mexican Dip",
+              "price": 70
+            },
             {
               "name": "Extra Cheese",
               "price": 50
+            }
+          ],
+          "price": 419,
+          "actualPrice": 299,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1267,
+      "createdAt": "2025-10-25T20:23:42.184Z",
+      "status": "Placed"
+    },
+    {
+      "id": "safwan@gmail#2",
+      "email": "safwan@gmail",
+      "items": [
+        {
+          "itemId": "1-1",
+          "id": 1,
+          "name": "Cheese Burger",
+          "addons": [
+            {
+              "name": "Fries",
+              "price": 60
             },
             {
               "name": "Regular Mayonnaise",
               "price": 30
-            },
-            {
-              "name": "Tacos and Dips",
-              "price": 80
-            },
-            {
-              "name": "Mexican dip",
-              "price": 70
             }
           ],
-          "price": 509,
-          "actualPrice": 279,
+          "price": 309,
+          "actualPrice": 219,
           "quantity": 1
         },
         {
@@ -333,17 +340,365 @@
               "price": 40
             },
             {
-              "name": "Italian Sauce",
-              "price": 70
+              "name": "Chili sauce",
+              "price": 15
             }
           ],
-          "price": 319,
+          "price": 264,
+          "actualPrice": 159,
+          "quantity": 1
+        },
+        {
+          "itemId": "3-2",
+          "id": 3,
+          "name": "Chicken Burger",
+          "addons": [
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            },
+            {
+              "name": "Italian Sauce",
+              "price": 70
+            },
+            {
+              "name": "Chili sauce",
+              "price": 15
+            }
+          ],
+          "price": 294,
           "actualPrice": 159,
           "quantity": 1
         }
       ],
-      "totalAmount": 1307,
-      "createdAt": "2025-10-25T13:00:34.732Z",
+      "totalAmount": 867,
+      "createdAt": "2025-10-25T20:24:29.469Z",
+      "status": "Placed"
+    },
+    {
+      "id": "khanjunaid@gmail.com#1",
+      "email": "khanjunaid@gmail.com",
+      "items": [
+        {
+          "itemId": "1-1",
+          "id": 1,
+          "name": "Cheese Burger",
+          "addons": [
+            {
+              "name": "Fries",
+              "price": 60
+            },
+            {
+              "name": "Mexican Dip",
+              "price": 70
+            },
+            {
+              "name": "Regular Mayonnaise",
+              "price": 30
+            }
+          ],
+          "price": 379,
+          "actualPrice": 219,
+          "quantity": 1
+        },
+        {
+          "itemId": "6-1",
+          "id": 6,
+          "name": "Flaming Fish Burger",
+          "addons": [
+            {
+              "name": "Tartar sauce (recommended)",
+              "price": 60
+            },
+            {
+              "name": "Fries and Onion rings",
+              "price": 100
+            }
+          ],
+          "price": 425,
+          "actualPrice": 265,
+          "quantity": 1
+        },
+        {
+          "itemId": "6-2",
+          "id": 6,
+          "name": "Flaming Fish Burger",
+          "addons": [
+            {
+              "name": "Mozzarella Stuffings",
+              "price": 60
+            },
+            {
+              "name": "Tartar sauce (recommended)",
+              "price": 60
+            },
+            {
+              "name": "Fries and Onion rings",
+              "price": 100
+            }
+          ],
+          "price": 485,
+          "actualPrice": 265,
+          "quantity": 1
+        },
+        {
+          "itemId": "5-1",
+          "id": 5,
+          "name": "Jumbo Burger",
+          "addons": [
+            {
+              "name": "Italian Sauce",
+              "price": 70
+            },
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            }
+          ],
+          "price": 419,
+          "actualPrice": 299,
+          "quantity": 1
+        },
+        {
+          "itemId": "2-1",
+          "id": 2,
+          "name": "Italian Chicken Burger",
+          "addons": [
+            {
+              "name": "Extra Italian Sauce",
+              "price": 70
+            },
+            {
+              "name": "Red Chilli Sauce",
+              "price": 15
+            },
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            },
+            {
+              "name": "Vegan Mayonnaise",
+              "price": 40
+            }
+          ],
+          "price": 434,
+          "actualPrice": 259,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 2142,
+      "createdAt": "2025-10-25T21:19:10.950Z",
+      "status": "Placed"
+    },
+    {
+      "id": "arsalan@gmail.com#1",
+      "email": "arsalan@gmail.com",
+      "items": [
+        {
+          "itemId": "2-1",
+          "id": 2,
+          "name": "Italian Chicken Burger",
+          "addons": [
+            {
+              "name": "Extra Italian Sauce",
+              "price": 70
+            },
+            {
+              "name": "Vegan Mayonnaise",
+              "price": 40
+            }
+          ],
+          "price": 369,
+          "actualPrice": 259,
+          "quantity": 1
+        },
+        {
+          "itemId": "5-1",
+          "id": 5,
+          "name": "Jumbo Burger",
+          "addons": [
+            {
+              "name": "Mexican Dip",
+              "price": 70
+            },
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            }
+          ],
+          "price": 419,
+          "actualPrice": 299,
+          "quantity": 1
+        },
+        {
+          "itemId": "2-2",
+          "id": 2,
+          "name": "Italian Chicken Burger",
+          "addons": [
+            {
+              "name": "Extra Italian Sauce",
+              "price": 70
+            },
+            {
+              "name": "Red Chilli Sauce",
+              "price": 15
+            },
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            }
+          ],
+          "price": 394,
+          "actualPrice": 259,
+          "quantity": 1
+        },
+        {
+          "itemId": "6-1",
+          "id": 6,
+          "name": "Flaming Fish Burger",
+          "addons": [
+            {
+              "name": "Jalapeños slices (for extra spice)",
+              "price": 50
+            },
+            {
+              "name": "Tartar sauce (recommended)",
+              "price": 60
+            }
+          ],
+          "price": 375,
+          "actualPrice": 265,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1557,
+      "createdAt": "2025-10-25T21:26:49.765Z",
+      "status": "Placed"
+    },
+    {
+      "id": "arsalan@gmail.com#2",
+      "email": "arsalan@gmail.com",
+      "items": [
+        {
+          "itemId": "1-1",
+          "id": 1,
+          "name": "Cheese Burger",
+          "addons": [
+            {
+              "name": "Fries",
+              "price": 60
+            },
+            {
+              "name": "Vegan Mayonnaise",
+              "price": 40
+            }
+          ],
+          "price": 319,
+          "actualPrice": 219,
+          "quantity": 1
+        },
+        {
+          "itemId": "2-1",
+          "id": 2,
+          "name": "Italian Chicken Burger",
+          "addons": [
+            {
+              "name": "Red Chilli Sauce",
+              "price": 15
+            },
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            }
+          ],
+          "price": 324,
+          "actualPrice": 259,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 643,
+      "createdAt": "2025-10-25T21:34:50.839Z",
+      "status": "Placed"
+    },
+    {
+      "id": "arsalan@gmail.com#3",
+      "email": "arsalan@gmail.com",
+      "items": [
+        {
+          "itemId": "2-1",
+          "id": 2,
+          "name": "Italian Chicken Burger",
+          "addons": [
+            {
+              "name": "Extra Italian Sauce",
+              "price": 70
+            },
+            {
+              "name": "Vegan Mayonnaise",
+              "price": 40
+            }
+          ],
+          "price": 369,
+          "actualPrice": 259,
+          "quantity": 1
+        },
+        {
+          "itemId": "4-1",
+          "id": 4,
+          "name": "Mexican Burger",
+          "addons": [
+            {
+              "name": "Extra Cheese",
+              "price": 50
+            },
+            {
+              "name": "Tacos and Dips",
+              "price": 80
+            }
+          ],
+          "price": 409,
+          "actualPrice": 279,
+          "quantity": 1
+        },
+        {
+          "itemId": "6-1",
+          "id": 6,
+          "name": "Flaming Fish Burger",
+          "addons": [
+            {
+              "name": "Mozzarella Stuffings",
+              "price": 60
+            },
+            {
+              "name": "Tartar sauce (recommended)",
+              "price": 60
+            }
+          ],
+          "price": 385,
+          "actualPrice": 265,
+          "quantity": 1
+        },
+        {
+          "itemId": "2-2",
+          "id": 2,
+          "name": "Italian Chicken Burger",
+          "addons": [
+            {
+              "name": "Red Chilli Sauce",
+              "price": 15
+            },
+            {
+              "name": "Vegan Mayonnaise",
+              "price": 40
+            }
+          ],
+          "price": 314,
+          "actualPrice": 259,
+          "quantity": 1
+        }
+      ],
+      "totalAmount": 1477,
+      "createdAt": "2025-10-25T21:44:15.771Z",
       "status": "Placed"
     }
   ],

@@ -93,6 +93,7 @@ app.post("/api/signup", (req, res) => {
 
     const db = readDB();
     
+    if (!Array.isArray(db.users)) db.users = [];
     const exists = db.users.find(u => u.email && u.email.toLowerCase() === email.toLowerCase());
     if (exists) return res.status(400).json({ message: "User already exists." });
 

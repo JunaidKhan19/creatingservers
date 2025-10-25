@@ -28,8 +28,8 @@ async function signup(event) {
         // Redirect to login page after 1 second
         if (res.ok) {
         setTimeout(() => {
-            window.location.href = "/";
-        }, 1000);
+            window.location.href = "/home";
+        }, 300);
         }
     } catch (err) {
         message.textContent = "Network error. Please try again.";
