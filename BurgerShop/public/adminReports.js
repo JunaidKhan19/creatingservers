@@ -1,4 +1,5 @@
-// Admin access check
+import Chart from 'chart.js/auto';
+
 const role = localStorage.getItem("role");
 if (role !== "admin") {
     alert("Access denied! Admins only.");
@@ -7,7 +8,6 @@ if (role !== "admin") {
 
 let chartInstance = null;
 
-// Render chart dynamically
 function renderChart(data, type, datasetKey) {
     const ctx = document.getElementById("mainChart").getContext("2d");
 
@@ -38,7 +38,7 @@ function renderChart(data, type, datasetKey) {
                     enabled: true
                 }
             },
-            // Only apply radius reduction if pie chart
+            //radius reduction if pie chart
             ...(type === "pie" ? {
                 layout: {
                     padding: 10
@@ -54,7 +54,6 @@ function renderChart(data, type, datasetKey) {
     });
 }
 
-// Generate dynamic colors for pie/bar
 function generateColors(count) {
     const colors = [];
     for (let i = 0; i < count; i++) {
@@ -72,10 +71,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     document.getElementById("totalOrders").textContent = data.totalOrders;
     document.getElementById("avgOrder").textContent = data.avgOrderValue.toFixed(2);
 
-    // Initial chart
     renderChart(data, "bar", "burgerSales");
 
-    // Event listeners for dynamic chart updates
     document.getElementById("updateChart").addEventListener("click", () => {
         const chartType = document.getElementById("chartType").value;
         const chartData = document.getElementById("chartData").value;
