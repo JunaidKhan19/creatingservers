@@ -76,6 +76,76 @@ BurgerShop/
 ├── package.json
 └── README.md
 
+--------------------------------------------------------------------------------------------
+## Screenshots
+
+<p align="center">
+  <img src="./screenshots/01 SignupPage.jpg" alt="Signup Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/02 LoginPage.jpg" alt="Login Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/03 AdminsHomePage.jpg" alt="Admin home Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/04 AdminAddBurgerPage1.jpg" alt="Admin Add Burger Page 1" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/04 AdminAddBurgerPage2.jpg" alt="Admin Add Burger Page 2" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/04 AdminAddBurgerPage3.jpg" alt="Admin Add Burger Page 3" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/05 AdminOrderPage.jpg" alt="Admin Order Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/06 AdminReportsPage_BarGrapgh.jpg" alt="Admin Reports Page BarGrapgh" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/06 AdminReportsPage_PieChart.jpg" alt="Admin Reports Page PieChart" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/07 UserHomePage.jpg" alt="User Home Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/08 UserHomePageCart.jpg" alt="User Home Page Cart" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/09 UserAddAddonsScreen.jpg" alt="User Add Addons Screen" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/10 UserOrderPage.jpg" alt="User Order Page" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/11 UserorderPlacedBillPage.png" alt="User Order Placed BillPage" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/12 UserPlaceOrderConfirmation.jpg" alt="User Place Order Confirmation" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/13 UserPlaceOrderConfirmedMessage.jpg" alt="User Place Order Confirmed Message" width="600"/>
+</p>
+
+<p align="center">
+  <img src="./screenshots/14 AboutPage.jpg" alt="About Page" width="600"/>
+</p>
 
 --------------------------------------------------------------------------------------------
 
