@@ -51,5 +51,3 @@ const server = http.createServer((req, res)=>{
         res.end("Page not found");
     }
 })
-
-//-------------------------------------- end --------------------------------------//
