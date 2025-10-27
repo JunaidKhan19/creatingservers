@@ -179,20 +179,6 @@ It’s intentionally kept simple and educational, with `db.json` as a mock datab
 4. Open your browser and go to
    👉 http://localhost:3000
 
-
---------------------------------------------------------------------------------------------
-
-## 📸 Screenshots & Demo
-
-### User Interface
-![User View](assets/screenshots/user-view.png)
-
-### Admin Dashboard
-![Admin View](assets/screenshots/admin-dashboard.png)
-
-### Demo Video
-[![Watch Demo](https://img.youtube.com/vi/dQw4w9WgXcQ/0.jpg)](https://youtu.be/dQw4w9WgXcQ)
-
 --------------------------------------------------------------------------------------------
 
 ## 📫 Connect With Me  
